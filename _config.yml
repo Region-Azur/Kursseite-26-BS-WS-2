@@ -1,0 +1,18 @@
+title: Basis WS 26-2
+tagline: Built with Decap CMS
+description: A minimal, responsive and feature-rich Jekyll theme for technical writing.
+url: ''
+author: Admin
+theme: jekyll-theme-chirpy
+theme_mode: light
+lang: en
+timezone: UTC
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+defaults:
+  - scope:
+      path: content
+    values:
+      permalink: /:slug/
