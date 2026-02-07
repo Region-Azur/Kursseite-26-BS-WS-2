@@ -1,7 +1,9 @@
 ---
-title: Home
 layout: home
+title: Home
+permalink: /
 ---
-# Wilkommen zum Kursseite des Basis WS 26-2
+
+# Welcome to Basis WS 26-1
 
 This site is managed by Decap CMS.
