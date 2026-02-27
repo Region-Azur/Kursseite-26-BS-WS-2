@@ -26,8 +26,8 @@ layout: none
       "categories": "",
       "tags": "",
       "date": "{{ page.last_modified_at | default: site.time | date: '%Y-%m-%d %H:%M:%S' }}",
-      "snippet": {{ page.content | strip_html | strip_newlines | truncate: 200 | jsonify }},
-      "content": {{ page.content | strip_html | strip_newlines | truncate: 200 | jsonify }}
+      "snippet": {{ page.content | strip_html | normalize_whitespace | truncate: 200 | jsonify }},
+      "content": {{ page.content | strip_html | normalize_whitespace | truncate: 200 | jsonify }}
     }
     {% assign first_item = false %}
   {% endfor %}
