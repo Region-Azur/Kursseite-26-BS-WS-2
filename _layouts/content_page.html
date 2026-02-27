@@ -1,0 +1,31 @@
+---
+layout: core
+refactor: true
+panel_includes:
+  - toc
+---
+
+<article id="core-wrapper" class="px-1" data-toc="true">
+  <header>
+    <h1 data-toc-skip>{{ page.title }}</h1>
+    
+    {% if page.description %}
+      <p class="post-desc fw-light mb-4">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="content">
+    {{ content }}
+  </div>
+
+  {% if page.last_modified_at %}
+    <div class="post-tail-wrapper text-muted mt-5">
+      <div class="post-meta mb-3">
+        <i class="far fa-calendar-alt fa-fw me-1"></i>
+        {% include datetime.html date=page.last_modified_at class='lastmod' lang=lang %}
+      </div>
+    </div>
+  {% endif %}
+</article>
+
+<script src="{{ '/assets/js/dist/post.min.js' | relative_url }}"></script>
