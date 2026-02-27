@@ -5,42 +5,34 @@ url: ''
 baseurl: ''
 author: Region AZUR
 
-# Language and Timezone
 lang: en
 timezone: Europe/Zurich
-
-# Theme Settings
 theme: jekyll-theme-chirpy
 
-# Collections Definition
-# This ensures Jekyll processes your custom folders and the theme's tabs correctly
+# 1. Remove 'content' from here. Only keep tabs.
 collections:
   tabs:
     output: true
-  content:
-    output: true
-    permalink: /:title  # <-- Kept exactly as you want it! No trailing slash.
 
-# 2. The Defaults
+# 2. Target the 'content' folder as regular pages
 defaults:
   - scope:
-      type: "content" # Targets the collection
+      path: "content" # <-- Matches your exact folder name without the underscore!
     values:
-      layout: content_page # Matches your custom layout file in _layouts
+      layout: content_page # Your custom layout
       toc: true
+      permalink: /:basename # <-- This strips /content/ and outputs exactly /hello-world
 
-# 3. The Includes
 include:
   - _tabs
+  - content # Include your physical folder so Jekyll scans it
   - _plugins
 
-# PWA Settings
 pwa:
   enabled: true
   cache:
     deny_paths: []
 
-# Social Links
 social:
   name: Region AZUR
   links:
