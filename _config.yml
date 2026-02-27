@@ -21,7 +21,7 @@ collections:
     output: true
   content:
     output: true
-    permalink: /:title
+    permalink: /:slug/
 
 # Manual Includes
 # Ensure Jekyll looks into these directories during the build process
@@ -30,21 +30,12 @@ include:
   - content
   - _plugins
 
-# Defaults for Front Matter
 defaults:
   - scope:
-      path: "" # Apply to all files first
+      type: "content"
     values:
-      layout: page
+      layout: content_page # Matches the filename we just made
       toc: true
-  - scope:
-      path: "_tabs"
-    values:
-      layout: page
-  - scope:
-      path: "content"
-    values:
-      layout: page # This ensures hello-world.md uses your custom layout
 
 # PWA Settings
 pwa:
