@@ -17,11 +17,13 @@ collections:
 # 2. Target the 'content' folder as regular pages
 defaults:
   - scope:
-      path: "content" # <-- Matches your exact folder name without the underscore!
+      path: "content" 
     values:
-      layout: content_page # Your custom layout
+      layout: content_page
       toc: true
-      permalink: /:basename # <-- This strips /content/ and outputs exactly /hello-world
+      panel_includes:  # <-- ADD THESE TWO LINES
+        - toc          # <-- This forces the TOC into the right-hand <aside>
+      permalink: /:basename
 
 include:
   - _tabs
