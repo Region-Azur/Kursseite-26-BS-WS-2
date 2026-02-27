@@ -8,17 +8,20 @@ layout: page
   </div>
 </article>
 
-<script>
-  var sidebarPanel = document.querySelector('#panel-wrapper .access');
-  if (sidebarPanel && !document.getElementById('toc-wrapper')) {
-    sidebarPanel.insertAdjacentHTML('beforeend', '<section id="toc-wrapper"><h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2><nav id="toc"></nav></section>');
-  }
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    
+    // Step A: Find the sidebar (which now definitely exists)
+    var sidebarPanel = document.querySelector('#panel-wrapper .access');
+    
+    // Step B: Inject the TOC wrapper if it's missing
+    if (sidebarPanel && !document.getElementById('toc-wrapper')) {
+      sidebarPanel.insertAdjacentHTML('afterend', '<section id="toc-wrapper"><h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2><nav id="toc"></nav></section>');
+    }
+
+    // Step C: Initialize the Table of Contents
     if (document.querySelector('#toc-wrapper')) {
       tocbot.init({
         tocSelector: '#toc',
@@ -29,5 +32,6 @@ layout: page
         scrollSmooth: false
       });
     }
+    
   });
 </script>
