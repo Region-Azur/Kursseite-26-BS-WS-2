@@ -14,11 +14,9 @@ pwa:
   enabled: true
   cache:
     deny_paths: []
-include:
-  - content
 defaults:
   - scope:
-      path: content/**/*.md
+      path: content
     values:
       layout: page
       toc: true

@@ -21,7 +21,7 @@ module Jekyll
         icon = (page.data['sidebar_icon'] || '').strip
         order = page.data['sidebar_order']
         slug = page.data['slug'] || File.basename(page.path, File.extname(page.path))
-        slug = slug.to_s.downcase.gsub(/[^a-z0-9_-]+/, '-').gsub(/-+/, '-').gsub(/A-+|-+z/, '')
+        slug = slug.to_s.downcase.gsub(/[^a-z0-9-_]+/, '-').gsub(/-+/, '-').gsub(/A-+|-+z/, '')
         slug = 'page' if slug.empty?
 
         tab_path = File.join(site.source, '_tabs', '_generated', "#{slug}.md")
