@@ -11,7 +11,8 @@ module Jekyll
 
       generated = {}
 
-      (site.pages + site.collections['content'].docs).each do |page|
+      # FIXED LINE: We only need to loop through site.pages now!
+      site.pages.each do |page|
         next unless page.data['sidebar']
         next unless page.url
 
