@@ -4,7 +4,6 @@ sidebar: true
 sidebar_title: Group
 sidebar_icon: ""
 sidebar_order: 2
-toc: true
 ---
 ## This is the title
 
