@@ -14,11 +14,14 @@ theme: jekyll-theme-chirpy
 
 # Collections Definition
 # This ensures Jekyll processes your custom folders and the theme's tabs correctly
+permalink: /:title
+
 collections:
   tabs:
     output: true
   content:
     output: true
+    permalink: /:title
 
 # Manual Includes
 # Ensure Jekyll looks into these directories during the build process
