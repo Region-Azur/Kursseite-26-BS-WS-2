@@ -14,28 +14,25 @@ theme: jekyll-theme-chirpy
 
 # Collections Definition
 # This ensures Jekyll processes your custom folders and the theme's tabs correctly
-permalink: /:title
-
 collections:
   tabs:
     output: true
   content:
     output: true
-    permalink: /:slug/
+    permalink: /:title  # <-- Kept exactly as you want it! No trailing slash.
 
-# Manual Includes
-# Ensure Jekyll looks into these directories during the build process
-include:
-  - _tabs
-  - content
-  - _plugins
-
+# 2. The Defaults
 defaults:
   - scope:
-      type: "content"
+      type: "content" # Targets the collection
     values:
-      layout: content_page # Matches the filename we just made
+      layout: content_page # Matches your custom layout file in _layouts
       toc: true
+
+# 3. The Includes
+include:
+  - _tabs
+  - _plugins
 
 # PWA Settings
 pwa:
