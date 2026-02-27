@@ -1,0 +1,26 @@
+title: Basis WS 2 26
+tagline: Built with Decap CMS
+description: A minimal, responsive and feature-rich Jekyll theme for technical writing.
+url: ''
+author: Region AZUR
+social:
+  name: Region AZUR
+  links:
+    - https://region-azur.ch
+theme: jekyll-theme-chirpy
+lang: en
+timezone: Europe/Zurich
+pwa:
+  enabled: true
+  cache:
+    deny_paths: []
+defaults:
+  - scope:
+      path: content
+    values:
+      layout: page
+      toc: true
+  - scope:
+      path: _tabs
+    values:
+      layout: page
