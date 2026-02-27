@@ -1,10 +1,10 @@
 ---
 title: Hello World
-sidebar: false
-sidebar_title: ""
+sidebar: true
+sidebar_title: Group
 sidebar_icon: ""
-sidebar_order: ""
-toc: false
+sidebar_order: 2
+toc: true
 ---
 ## This is the title
 
