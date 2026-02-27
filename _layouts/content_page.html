@@ -1,5 +1,5 @@
 ---
-layout: page 
+layout: page
 ---
 
 <article class="px-1" data-toc="true">
@@ -9,14 +9,9 @@ layout: page
 </article>
 
 <script>
-  const sidebarPanel = document.querySelector('#panel-wrapper');
+  var sidebarPanel = document.querySelector('#panel-wrapper .access');
   if (sidebarPanel && !document.getElementById('toc-wrapper')) {
-    sidebarPanel.insertAdjacentHTML('beforeend', `
-      <section id="toc-wrapper">
-        <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
-        <nav id="toc"></nav>
-      </section>
-    `);
+    sidebarPanel.insertAdjacentHTML('beforeend', '<section id="toc-wrapper"><h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2><nav id="toc"></nav></section>');
   }
 </script>
 
@@ -26,12 +21,12 @@ layout: page
   document.addEventListener("DOMContentLoaded", function() {
     if (document.querySelector('#toc-wrapper')) {
       tocbot.init({
-        tocSelector: '#toc',              // Where to put the TOC
-        contentSelector: '.content',      // Where to look for headings
-        ignoreSelector: '[data-toc-skip]',// Ignore headings with this attribute
-        headingSelector: 'h2, h3, h4',    // Which heading levels to grab
-        orderedList: false,               // Use unordered bullet lists
-        scrollSmooth: false               // Let the browser handle the scrolling
+        tocSelector: '#toc',
+        contentSelector: '.content',
+        ignoreSelector: '[data-toc-skip]',
+        headingSelector: 'h2, h3, h4',
+        orderedList: false,
+        scrollSmooth: false
       });
     }
   });
