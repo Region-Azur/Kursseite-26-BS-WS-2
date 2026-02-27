@@ -2,6 +2,8 @@
 layout: page
 ---
 
+<button id="copy-link" style="display: none;"></button>
+
 <article class="px-1" data-toc="true">
   <div class="content">
     {{ content }}
@@ -10,28 +12,27 @@ layout: page
 
 <script src="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
-<script>
+<script type="text/javascript">
+/*<![CDATA[*/
   document.addEventListener("DOMContentLoaded", function() {
     
-    // Step A: Find the sidebar (which now definitely exists)
-    var sidebarPanel = document.querySelector('#panel-wrapper .access');
+    var sidebarPanel = document.querySelector("#panel-wrapper .access");
     
-    // Step B: Inject the TOC wrapper if it's missing
-    if (sidebarPanel && !document.getElementById('toc-wrapper')) {
-      sidebarPanel.insertAdjacentHTML('afterend', '<section id="toc-wrapper"><h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2><nav id="toc"></nav></section>');
+    if (sidebarPanel && !document.getElementById("toc-wrapper")) {
+      sidebarPanel.insertAdjacentHTML("afterend", "<section id=\"toc-wrapper\"><h2 class=\"panel-heading ps-3 pt-2 mb-2\">Contents</h2><nav id=\"toc\"></nav></section>");
     }
 
-    // Step C: Initialize the Table of Contents
-    if (document.querySelector('#toc-wrapper')) {
+    if (typeof tocbot !== "undefined" && document.getElementById("toc-wrapper")) {
       tocbot.init({
-        tocSelector: '#toc',
-        contentSelector: '.content',
-        ignoreSelector: '[data-toc-skip]',
-        headingSelector: 'h2, h3, h4',
+        tocSelector: "#toc",
+        contentSelector: ".content",
+        ignoreSelector: "[data-toc-skip]",
+        headingSelector: "h2, h3, h4",
         orderedList: false,
         scrollSmooth: false
       });
     }
     
   });
+/*]]>*/
 </script>
