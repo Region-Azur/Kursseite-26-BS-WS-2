@@ -1,5 +1,5 @@
 ---
-layout: page  # Inherit 'page' so all your CSS and site grids work perfectly
+layout: page 
 ---
 
 <article class="px-1" data-toc="true">
@@ -12,7 +12,7 @@ layout: page  # Inherit 'page' so all your CSS and site grids work perfectly
   const sidebarPanel = document.querySelector('#panel-wrapper');
   if (sidebarPanel && !document.getElementById('toc-wrapper')) {
     sidebarPanel.insertAdjacentHTML('beforeend', `
-      <section id="toc-wrapper" class="d-none">
+      <section id="toc-wrapper">
         <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
         <nav id="toc"></nav>
       </section>
@@ -22,4 +22,17 @@ layout: page  # Inherit 'page' so all your CSS and site grids work perfectly
 
 <script src="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
-<script src="{{ '/assets/js/dist/post.min.js' | relative_url }}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (document.querySelector('#toc-wrapper')) {
+      tocbot.init({
+        tocSelector: '#toc',              // Where to put the TOC
+        contentSelector: '.content',      // Where to look for headings
+        ignoreSelector: '[data-toc-skip]',// Ignore headings with this attribute
+        headingSelector: 'h2, h3, h4',    // Which heading levels to grab
+        orderedList: false,               // Use unordered bullet lists
+        scrollSmooth: false               // Let the browser handle the scrolling
+      });
+    }
+  });
+</script>
