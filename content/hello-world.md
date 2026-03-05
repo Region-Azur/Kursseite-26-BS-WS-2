@@ -1,8 +1,8 @@
 ---
 title: Hello World
 sidebar: true
-sidebar_title: Group
-sidebar_icon: fa-solid fa-graduation-cap
+sidebar_title: Gruppen
+sidebar_icon: fa-solid fa-users
 sidebar_order: 2
 toc: true
 ---
