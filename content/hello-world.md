@@ -2,8 +2,9 @@
 title: Hello World
 sidebar: true
 sidebar_title: Group
-sidebar_icon: fa-solid fa-hand
+sidebar_icon: fa-solid fa-graduation-cap
 sidebar_order: 2
+toc: true
 ---
 ## This is the title
 
