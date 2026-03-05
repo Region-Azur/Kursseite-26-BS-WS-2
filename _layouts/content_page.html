@@ -14,25 +14,22 @@ layout: page
 
 <script type="text/javascript">
 /*<![CDATA[*/
-  document.addEventListener("DOMContentLoaded", function() {
-    
-    var sidebarPanel = document.querySelector("#panel-wrapper .access");
-    
-    if (sidebarPanel && !document.getElementById("toc-wrapper")) {
-      sidebarPanel.insertAdjacentHTML("afterend", "<section id=\"toc-wrapper\"><h2 class=\"panel-heading ps-3 pt-2 mb-2\">Contents</h2><nav id=\"toc\"></nav></section>");
-    }
-
-    if (typeof tocbot !== "undefined" && document.getElementById("toc-wrapper")) {
-      tocbot.init({
-        tocSelector: "#toc",
-        contentSelector: ".content",
-        ignoreSelector: "[data-toc-skip]",
-        headingSelector: "h2, h3, h4",
-        orderedList: false,
-        scrollSmooth: false
-      });
-    }
-    
-  });
+document.addEventListener("DOMContentLoaded", function() {
+  var sidebar = document.querySelector("#panel-wrapper .access");
+  if (sidebar && !document.getElementById("toc-wrapper")) {
+    sidebar.insertAdjacentHTML("afterend", "<section id=\"toc-wrapper\" class=\"d-none\"><h2 class=\"panel-heading ps-3 pt-2 mb-2\">Contents</h2><nav id=\"toc\"></nav></section>");
+  }
+  if (typeof tocbot !== "undefined" && document.getElementById("toc-wrapper")) {
+    tocbot.init({
+      tocSelector: "#toc",
+      contentSelector: ".content",
+      ignoreSelector: "[data-toc-skip]",
+      headingSelector: "h2, h3, h4",
+      orderedList: false,
+      scrollSmooth: false
+    });
+    document.getElementById("toc-wrapper").classList.remove("d-none");
+  }
+});
 /*]]>*/
 </script>
