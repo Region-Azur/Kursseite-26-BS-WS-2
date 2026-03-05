@@ -2,7 +2,7 @@
 title: Hello World
 sidebar: true
 sidebar_title: Group
-sidebar_icon: "fa-solid fa-hand"
+sidebar_icon: fa-solid fa-hand
 sidebar_order: 2
 ---
 ## This is the title
@@ -11,4 +11,4 @@ sidebar_order: 2
 
 here we have some Content
 
-Moin again
+Moin again and again
