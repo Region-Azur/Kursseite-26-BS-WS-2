@@ -2,7 +2,7 @@
 title: Hello World
 sidebar: true
 sidebar_title: Gruppen
-sidebar_icon: fa-solid fa-users
+sidebar_icon: fa-solid fa-pen
 sidebar_order: 2
 toc: true
 ---
@@ -12,4 +12,6 @@ toc: true
 
 here we have some Content
 
-Hallo?
+Hallo?\
+\
+Halso du Hund
